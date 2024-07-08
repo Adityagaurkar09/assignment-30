@@ -35,17 +35,39 @@
         top: 30px;
         right: 30px;
     }
-
+    .bg-dark{
+        background-color: black;
+        color: white;
+        border: white;
+    }
+    .bg-light{
+        background-color: rgb(108, 196, 167);
+        color: black;
+        border: white;
+    }
+    .btn-dark{
+        background-color: aqua;
+        color: white;
+    }
+    .btn-light{
+        background-color: rgb(22, 22, 167);
+        color: black;
+    }
 
 </style>
 <body>
     <div class="body" id="main-body">
-    <h1 class="head">Bulb Toggler</h1>
+    <h1 class="head">Bulb Toogler</h1>
+
+    <div class="select-icon-container">
+    <img src="./sun.png" class="select-icon" onclick="bglight()">
+    <img src="./moon.png" class="select-icon" onclick="bgdark()">
+</div>
 
     <img src="./bulb-off.png" class="bulb" id="img-bulb">
      
     <div class="btn-contain">
-    <button type="button" class="btn" onclick="tooglebulb()">toggler</button>
+    <button type="button" class="btn btn-light" onclick="tooglebulb()" id="btn-toggler" >toggler</button>
     
 </div>
 </div>
@@ -58,7 +80,24 @@
     else
     bulbElement.src="./bulb-off.png"
     }
-  
+    function bgdark(){
+      const mainbody = document.getElementById("main-body")
+      mainbody.classList.add("bg-dark")
+      mainbody.classList.remove("bg-light")
+
+      const btntoggler = document.getElementById("btn-toggler")
+      btntoggler.classList.add("btn-dark")
+      btntoggler.classList.remove("btn-light")
+    }
+    function bglight(){
+        const mainbody = document.getElementById("main-body")
+      mainbody.classList.add("bg-light")
+      mainbody.classList.remove("bg-dark")
+
+      const btntoggler = document.getElementById("btn-toggler")
+      btntoggler.classList.add("btn-light")
+      btntoggler.classList.remove("btn-dark")
+    }
 </script>
 </body>
 </html>
